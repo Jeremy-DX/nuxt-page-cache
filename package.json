@@ -1,0 +1,25 @@
+{
+  "name": "@feasy/nuxt-page-cache",
+  "version": "1.5.3",
+  "description": "page cache for nuxt",
+  "main": "lib/middleware.js",
+  "scripts": {
+    "build": "babel packages --out-dir lib",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "nuxt",
+    "ssr",
+    "cache",
+    "vue"
+  ],
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "cache-manager": "^2.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
