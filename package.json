@@ -1,6 +1,6 @@
 {
   "name": "@feasy/nuxt-page-cache",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "page cache for nuxt",
   "main": "lib/middleware.js",
   "scripts": {

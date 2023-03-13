@@ -1,4 +1,4 @@
-# nuxt-ssr-cache
+# nuxt-page-cache
 ![npm](https://img.shields.io/npm/v/@feasy/nuxt-page-cache)
 
 Cache middleware for nuxt's page rendering.
@@ -8,7 +8,7 @@ Cache middleware for nuxt's page rendering.
 
 or
 
-```yarn add nuxt-page-cache```
+```yarn add feasy@nuxt-page-cache```
 
 then inside your `nuxt.config.js` add cache config:
 
@@ -22,7 +22,7 @@ module.exports = {
   // ....
 
   modules: [
-      'nuxt-ssr-cache',{
+      'feasy@nuxt-page-cache',{
     // if you're serving multiple host names (with differing
     // results) from the same server, set this option to true.
     // (cache keys will be prefixed by your host name)
@@ -70,7 +70,7 @@ If you want to make cache for different users this is a demo
 ```javascript
 
   modules: [
-    'nuxt-ssr-cache',{
+    'feasy@nuxt-page-cache',{
     useHostPrefix: false,
     pages: [
       '/page1',
