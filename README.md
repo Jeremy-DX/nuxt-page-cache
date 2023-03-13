@@ -66,7 +66,49 @@ module.exports = {
   // ...
 };
 ```
+If you want to make cache for different users this is a demo
+```javascript
 
+  modules: [
+    'nuxt-ssr-cache',{
+    useHostPrefix: false,
+    pages: [
+      '/page1',
+      '/page2',
+    ],
+    key(route, context) {
+      if (route === '/') {
+        const hostname =
+          (context.req && context.req.hostname) ||
+          (context.req && context.req.host) ||
+          (context.req && context.req.headers && context.req.headers.host) ||
+          (context.req && context.req.headers && context.req.headers.hostname)
+        const parseCookie = str =>
+          str
+            .split(';')
+            .map(v => v.split('='))
+            .reduce((acc, v) => {
+              acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim())
+              return acc
+            }, {})
+        const cookie = context.req.headers && context.req.headers.cookie && parseCookie(context.req.headers.cookie)
+        if (cookie && cookie.username) {
+          return `${hostname}${route}.${cookie.username}`
+        }
+      }
+    },
+    store: {
+      type: 'memory',
+      // maximum number of pages to store in memory
+      // if limit is reached, least recently used page
+      // is removed.
+      max: 100,
+      // number of seconds to store this page in cache
+      ttl: 60,
+    },
+  },
+  ],
+```
 
 
 ## License
