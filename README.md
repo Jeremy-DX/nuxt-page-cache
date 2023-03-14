@@ -4,11 +4,11 @@
 Cache middleware for nuxt's page rendering.
 
 ## Setup
-```npm install feasy@nuxt-page-cache```
+```npm install @feasy/nuxt-page-cache```
 
 or
 
-```yarn add feasy@nuxt-page-cache```
+```yarn add @feasy/nuxt-page-cache```
 
 then inside your `nuxt.config.js` add cache config:
 
@@ -22,7 +22,7 @@ module.exports = {
   // ....
 
   modules: [
-      'feasy@nuxt-page-cache',{
+      '@feasy/nuxt-page-cache',{
     // if you're serving multiple host names (with differing
     // results) from the same server, set this option to true.
     // (cache keys will be prefixed by your host name)
@@ -70,7 +70,7 @@ If you want to make cache for different users this is a demo
 ```javascript
 
   modules: [
-    'feasy@nuxt-page-cache',{
+    '@feasy/nuxt-page-cache',{
     useHostPrefix: false,
     pages: [
       '/page1',
